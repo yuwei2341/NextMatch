@@ -1,0 +1,103 @@
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: 18;
+   font-weight: bold;
+   margin: 0px;
+   overflow: hidden;
+   padding: 3px 0px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 200px;
+}
+
+span.tab{
+    padding: 80 80px; /* Or desired space*/
+}
+
+body {
+  padding-top: 50px;
+}
+
+.btn-font {
+	font-size: 1em !important;
+}
+
+.lead2{ 
+	
+	font-weight:bold !important;
+}
+
+.tableHead{
+	font-weight:bold !important;
+	font-size: 1em;
+}
+
+.table2{
+	width:420px !important;
+	margin:auto !important;
+	border:0  !important;
+}
+
+.navHeaderTop{
+	position: relative;
+	top: -40px;
+	width: 75%;
+	margin: auto;
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.navHeaderFont{
+	color: #333 !important;
+}
+
+.h4High{
+	margin-top: 0px !important;
+}
+
+.h5High{
+	font-size: 1em !important;
+	margin-bottom: -10px !important;
+	padding-top: 30px;
+}
+
+.transJumbo{
+	position: relative;
+	top: -40px;
+	opacity:0.85 !important;
+}
+
+.panel1{
+	position: relative;
+	top: -50px;
+	left: 140px;
+}
+
+.backImg{
+   top: 0;
+   left: 0;
+   height: auto;
+   position: absolute;
+   width: 100%;
+}
+
+.tdText{
+	width: 400px !important;
+	text-align: center !important;
+}
+
+.labelLarge{
+	padding-left:50px; 
+	padding-right:50px; 
+	font-size: 100% !important;
+}

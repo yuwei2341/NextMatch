@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container theme-showcase" role="main">
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron transJumbo">
+		<h4>
+		<table class="table table2">
+			<tr><td class="tableHead" align="center">Your team</td><td align="center">vs.</td><td class="tableHead" align="center">Your opponent</td></tr>
+			<tr><td align="center">{{teamRec.yourName}}</td><td align="center"></td><td align="center">{{teamRec.tgtName}}</td></tr>
+			<tr><td align="center"><img src="../static/img/{{teamRec.yourName}}.png" alt="..." style="width:110px;height:110px"></td><td></td><td align="center"><img src="../static/img/{{teamRec.tgtName}}.png" alt="..." style="width:110px;height:110px"></td></tr>
+		</table>
+		</h4>
+		
+		<p class="lead lead2">Suggestions for your team</p>
+		
+		<table class="table table-hover">
+			<tr><th>Watch out the other team's</th><th>Make more</th><th>Make less</th></tr>
+			{% if teamRec.yourName != teamRec.tgtName %}
+				{% for ii in teamRec.actions%}
+					<tr><td>{{ii[0]}}</td><td>{{ ii[1] }}</td><td>{{ ii[2] }}</td></tr>
+				{% endfor %}
+			{% endif %}
+		</table>
+		
+		<h4>
+		Based on the performance of both teams so far in the season, the chance of winning for your team, {{teamRec.yourName}}, is
+		<br></br>
+		<div class="label label-info" style="padding-left:50px; padding-right:50px; "> {{teamRec.odds}}</div>
+		<br></br>
+		{% if teamRec.yourName != teamRec.tgtName %}
+		10% improvement in the recommended areas can increase your chance of winning to
+		<br></br>
+		<div class="label label-info" style="padding-left:50px; padding-right:50px; "> {{teamRec.oddsNew}}</div>
+		{% endif %}
+		</h4>
+	</div>
+</div> <!-- /.container-->
+
+{% endblock %}

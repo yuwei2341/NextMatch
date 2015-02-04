@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="container theme-showcase" >
+	
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron transJumbo" >
+        <h2>Next Match - La Liga</h2>
+        <p>Choose your team and your opponent, see what you can do to beat them</p>
+      </div>
+	  
+	  <div class="panel1">
+		<h3>
+		<tr>
+		<th><div class="label label-info" style="padding-left:10px; padding-right:95px">Your Team</div></th>
+		<th><div class="label label-info">Your Opponent Team</div></th>
+		</tr>
+		</h3>
+
+
+		<form class="form-inline" name="Items" action="{{url_for('output')}}" method='GET'> 
+			<div class="form-group">
+				<select id="soflow" name="Item_1">
+					{% for aa in teams %}
+						<option value="{{aa}}">{{aa}}</option>
+					{% endfor %}
+				</select>
+				<select id="soflow" name="Item_2">
+					{% for aa in teams %}
+						<option value="{{aa}}">{{aa}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<button class="btn btn-success btn-font" type="submit">Next</button>
+		</form>
+	   </div>
+	</div> <!-- /container -->
+	
+	
+	
+{% endblock %}

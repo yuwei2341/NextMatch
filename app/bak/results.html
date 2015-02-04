@@ -1,0 +1,35 @@
+<html>
+ <head>
+    <title>{{title}} - microblog</title>
+ </head>
+ <body>
+    <h1>Recommendataion</h1>
+    <h2>
+        <br>Your team is: {{teamRec.teamName[0]}}<br>
+        <br>Your opponent team is: {{teamRec.teamName[1]}}<br>
+    </h2>
+
+
+    <br>The odds of your team winning is: {{teamRec.odds}}<br>
+    <h2>
+    <br>To increase the odds, you want to Focus on your:<br>
+    </h2>
+    {% for act in teamRec.actions[0] %}
+        <br>{{act}}<br>
+    {% endfor %}
+    <h2>
+    <br>Watch out for your opponent team's<br>
+    </h2>
+    {% for act in teamRec.actions[1] %}
+        <br>{{act}}<br>
+    {% endfor %}
+   
+
+
+
+ </body>
+
+
+
+
+</html>

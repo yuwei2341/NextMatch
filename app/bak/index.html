@@ -1,0 +1,35 @@
+<html>
+
+<link href="../static/css/custom.css" rel="stylesheet">
+ <head>
+
+    <title>{{title}} - microblog</title>
+ </head>
+ <body>
+    <h1>Choose your team and your next match opponent</h1>
+    <h2>
+	
+	
+	
+	
+	
+    <form name="Items" action="{{url_for('cities_page')}}" method='POST'>
+    <select id="soflow" name="Item_1">
+        {% for aa in user.teams %}
+            <option value={{aa}}>{{aa}}</option>
+        {% endfor %}
+    </select>
+    <select id="soflow-color" name="Item_2">
+        {% for aa in user.teams %}
+            <option value={{aa}}>{{aa}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Next</button>
+	</form>
+	<h2>
+
+    <ul>
+
+    </ul>
+ </body>
+</html>
