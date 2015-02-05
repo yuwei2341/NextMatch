@@ -19,13 +19,12 @@
 		
 		</h5>
 		<h5 class="h5High">
-		<p class="lead lead2">Area you want to focus on</p>
-		
+					<p class="lead lead2">Recommendations</p>
 		<table class="table table-hover">
-			<tr><th class="tdText">Accuracy of</th><th class="tdText">Amount of</th><th class="tdText">Your Opponent's Amount of</th></tr>
+			<tr><th class="tdText">Areas to focus on</th><th class="tdText">Watch out your opponent's</th></tr>
 			{% if teamRec.yourName != teamRec.tgtName %}
 				{% for ii in teamRec.actions%}
-					<tr><td class="tdText">{{ii[0]}}</td><td class="tdText">{{ ii[1] }}</td><td class="tdText">{{ ii[2] }}</td></tr>
+					<tr><td class="tdText">{{ii[0]}}</td><td class="tdText">{{ ii[1] }}</td></tr>
 				{% endfor %}
 			{% endif %}
 		</table>

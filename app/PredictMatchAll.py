@@ -75,7 +75,12 @@ def GetActions(features):
                         featureImprove.append(row['features'])
                         count += 1
 
-    actions = pd.DataFrame([featureYAcc, featureYMore, featureOP], index = ['YAcc', 'YMore', 'OP']).T
+    useTwoCol = True
+    if useTwoCol:
+        actions = pd.DataFrame([featureYAcc + featureYMore, featureOP], index = ['Your', 'OP']).T
+
+    else:
+        actions = pd.DataFrame([featureYAcc, featureYMore, featureOP], index = ['YAcc', 'YMore', 'OP']).T
     nDimActions = actions.shape
     actions = actions.values.tolist()
 	
@@ -86,7 +91,11 @@ def GetActions(features):
             if actions[ii][jj] == None:
                 actions[ii][jj] = ' '
             else:
-                actions[ii][jj] = actions[ii][jj].replace('Att', 'Attempt').replace('Obox', 'Outside the Penalty Box').replace('Ibox', 'Inside the Penalty Box').replace('Accuracy ', '').replace('Total ', '').replace('Fwd', 'Forward').replace('18Yardplus', 'Outside the Penalty Box').replace('18Yard', 'Inside the Penalty Box')
+                actions[ii][jj] = actions[ii][jj].replace('Att', 'Attempt').replace('Obox', 'Outside the Penalty Box').replace('Ibox', 'Inside the Penalty Box').replace('Total ', '').replace('Fwd', 'Forward').replace('18Yardplus', 'Outside the Penalty Box').replace('18Yard', 'Inside the Penalty Box')
+                if 'Accuracy' in actions[ii][jj]:
+                    actions[ii][jj] = actions[ii][jj][9:] + ' Accuracy'
+                else:
+                    actions[ii][jj] = '# of ' + actions[ii][jj]
     #print actions
     return actions, featureImprove           
 
