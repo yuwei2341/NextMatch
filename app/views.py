@@ -18,6 +18,7 @@ def output():
 
     	# Compute chance of winning and recommended actions
     	odds, oddsNew, actions = PredictMatch(yourName, tgtName, current_app.teamModels, current_app.db) 
+    	print odds
     	teamRec = {'yourName': yourName, 'tgtName': tgtName, 'odds': odds, 'oddsNew': oddsNew, 'actions': actions}
     except Exception as e:
         print str(e)
@@ -26,3 +27,7 @@ def output():
 @app.route('/contact')
 def contact():
 	return render_template("contact.html")
+
+@app.route('/demo')
+def demo():
+	return render_template("demo.html")

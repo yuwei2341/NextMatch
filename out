@@ -17,3 +17,477 @@
 65.87.19.170 - - [05/Feb/2015 03:43:33] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
 65.87.19.170 - - [05/Feb/2015 03:43:33] "GET /static/img/Real%20Sociedad.png HTTP/1.1" 304 -
 65.87.19.170 - - [05/Feb/2015 03:43:33] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:48:07] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:48:07] "GET /favicon.ico HTTP/1.1" 404 -
+65.87.19.170 - - [05/Feb/2015 03:48:11] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:16] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:17] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:25] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:46] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:46] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:46] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:46] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:46] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:47] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:47] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:49:51] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: output.html
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:49:52] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 03:50:12] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:41:18] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/css/custom.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:41:19] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:11] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:42:11] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:11] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:11] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:11] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:12] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:42:12] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:43:11] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:54:32] "GET /output?Item_1=Athletic+Club&Item_2=Espanyol HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/css/custom.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/img/Espanyol.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:54:33] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:55:17] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:21] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:22] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:55:22] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:55:22] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:55:22] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 04:55:25] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:27] "GET /contact HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:36] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:39] "GET /contact HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 04:55:43] "GET /contact HTTP/1.1" 200 -
+124.115.17.140 - - [05/Feb/2015 05:36:21] "GET /manager/html HTTP/1.1" 404 -
+108.91.172.110 - - [05/Feb/2015 16:02:20] "GET / HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+108.91.172.110 - - [05/Feb/2015 16:02:21] "GET /static/css/custom.css HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+108.91.172.110 - - [05/Feb/2015 16:02:21] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+108.91.172.110 - - [05/Feb/2015 16:02:22] "GET /favicon.ico HTTP/1.1" 404 -
+108.91.172.110 - - [05/Feb/2015 16:02:24] "GET /output?Item_1=Athletic+Club&Item_2=Celta+Vigo HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+108.91.172.110 - - [05/Feb/2015 16:02:24] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:24] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:25] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:25] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:25] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+108.91.172.110 - - [05/Feb/2015 16:02:25] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:01] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:29:02] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:29:02] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:29:02] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:29:02] "GET /favicon.ico HTTP/1.1" 404 -
+65.87.19.170 - - [05/Feb/2015 17:29:04] "GET /output?Item_1=Celta+Vigo&Item_2=Athletic+Club HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:05] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:06] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:08] "GET /output?__debugger__=yes&cmd=source&frm=140675621583696&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:31] "GET /output?Item_1=Celta+Vigo&Item_2=Athletic+Club HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:29:32] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:32] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:32] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:32] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:33] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:33] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:33] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:34] "GET /output?Item_1=Celta+Vigo&Item_2=Athletic+Club HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:29:34] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:41] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:41] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:42] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:42] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:42] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:29:42] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:33:27] "GET /output?__debugger__=yes&cmd=source&frm=140675653889424&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:33:28] "GET /output?__debugger__=yes&cmd=source&frm=140675653889424&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:45] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:47] "GET /output?Item_1=Athletic+Club&Item_2=Athletic+Club HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:34:47] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:47] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:48] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:48] "GET /output?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:48] "GET /output?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:34:48] "GET /output?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:35:41] "GET /output?__debugger__=yes&cmd=source&frm=140675625517008&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:38:35] "GET /output?Item_1=Athletic+Club&Item_2=Athletic+Club HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 24, in output
+    print str(e)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:38:35] "GET /output?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:38:35] "GET /output?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:38:35] "GET /output?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/Dropbox/NextMatch/app/views.py', reloading
+Error on sql SELECT * FROM Celta_Vigo
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+Error on sql SELECT * FROM Athletic_Club
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+Error on sql SELECT * FROM Athletic_Club
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+Error on sql SELECT * FROM Athletic_Club
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+Error on sql SELECT * FROM Athletic_Club
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+Error on sql SELECT * FROM Athletic_Club
+(2006, "MySQL server has gone away (error(32, 'Broken pipe'))")
+ * Restarting with stat
+65.87.19.170 - - [05/Feb/2015 17:38:40] "GET /output?__debugger__=yes&cmd=source&frm=140675657392272&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 25, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:38:42] "GET /output?__debugger__=yes&cmd=source&frm=140675657392272&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 25, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:38:43] "GET /output?__debugger__=yes&cmd=source&frm=140675657393488&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 25, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:38:46] "GET /output?__debugger__=yes&cmd=source&frm=140675657392272&s=0oUjiwIN3W2DRXqwOmXX HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 25, in output
+    return render_template("output.html", title = 'Home', teamRec = teamRec)
+UnboundLocalError: local variable 'teamRec' referenced before assignment
+65.87.19.170 - - [05/Feb/2015 17:38:53] "GET /output?Item_1=Athletic+Club&Item_2=Athletic+Club HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/Dropbox/NextMatch/app/views.py', reloading
+'NoneType' object has no attribute 'replace'
+'NoneType' object has no attribute 'replace'
+'NoneType' object has no attribute 'replace'
+'NoneType' object has no attribute 'replace'
+0.5 0.5 [['Cross', 'Aerial Won', 'Crosses Outside the Penalty Box'], ['Shot', 'Fastbreak', 'Scoring Attempt'], [' ', 'Duel Won', 'Forward Pass']]
+ * Restarting with stat
+65.87.19.170 - - [05/Feb/2015 17:38:59] "GET /output?Item_1=Athletic+Club&Item_2=Athletic+Club HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:38:59] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:38:59] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:38:59] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:38:59] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:39:00] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:39:00] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:39:00] "GET /static/img/bg8.jpg HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:39:03] "GET /output?Item_1=Athletic+Club&Item_2=Barcelona HTTP/1.1" 200 -
+ * Detected change in '/home/ubuntu/Dropbox/NextMatch/app/views.py', reloading
+0.5 0.5 [['Cross', 'Aerial Won', 'Crosses Outside the Penalty Box'], ['Shot', 'Fastbreak', 'Scoring Attempt'], [' ', 'Duel Won', 'Forward Pass']]
+0.26 0.62 [['Cross', 'Aerial Won', 'Crosses Outside the Penalty Box'], ['Shot', 'Fastbreak', 'Scoring Attempt'], [' ', 'Duel Won', ' '], [' ', 'Effective Clearance', ' ']]
+ * Restarting with stat
+ * Detected change in '/home/ubuntu/Dropbox/NextMatch/app/views.py', reloading
+ * Restarting with stat
+65.87.19.170 - - [05/Feb/2015 17:40:22] "GET /output?Item_1=Athletic+Club&Item_2=Barcelona HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/img/Athletic%20Club.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/img/Barcelona.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:23] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:40:48] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:40:52] "GET /output?Item_1=Athletic+Club&Item_2=Malaga HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:40:53] "GET /static/img/Malaga.png HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:44:21] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:44:22] "GET /favicon.ico HTTP/1.1" 404 -
+65.87.19.170 - - [05/Feb/2015 17:44:26] "GET /output?Item_1=Athletic+Club&Item_2=Barcelona HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:49:20] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:02] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:02] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:02] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:03] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:07] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:08] "GET /static/css/custom.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:08] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:08] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:08] "GET /static/img/bg8.jpg HTTP/1.1" 304 -
+65.87.19.170 - - [05/Feb/2015 17:50:33] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:33] "GET /static/css/custom.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:33] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:33] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 17:50:34] "GET /static/img/bg8.jpg HTTP/1.1" 200 -
+66.249.84.228 - - [05/Feb/2015 18:05:29] "GET / HTTP/1.1" 200 -
+66.249.84.234 - - [05/Feb/2015 18:05:30] "GET /favicon.ico HTTP/1.1" 404 -
+65.87.19.170 - - [05/Feb/2015 18:20:25] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:20:25] "GET /static/css/custom.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:20:25] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:20:25] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:20:26] "GET /static/img/bg8.jpg HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:20:27] "GET /favicon.ico HTTP/1.1" 404 -
+141.212.122.98 - - [05/Feb/2015 18:21:07] "GET / HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:22:37] "GET /output?Item_1=Valencia&Item_2=Sevilla HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:22:38] "GET /static/img/Valencia.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 18:22:38] "GET /static/img/Sevilla.png HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 19:20:46] "GET /output?Item_1=Athletic+Club&Item_2=Atletico+Madrid HTTP/1.1" 200 -
+65.87.19.170 - - [05/Feb/2015 19:20:47] "GET /static/img/Atletico%20Madrid.png HTTP/1.1" 304 -
+ * Detected change in '/home/ubuntu/Dropbox/NextMatch/app/views.py', reloading
+0.26
+0.99
+0.26
+0.61
+0.51
+ * Restarting with stat
+Traceback (most recent call last):
+  File "./run.py", line 2, in <module>
+    from app import app
+  File "/home/ubuntu/Dropbox/NextMatch/app/__init__.py", line 3, in <module>
+    from app import views
+  File "/home/ubuntu/Dropbox/NextMatch/app/views.py", line 31, in <module>
+    @app.route('/contact')
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1013, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 62, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 984, in add_url_rule
+    'existing endpoint function: %s' % endpoint)
+AssertionError: View function mapping is overwriting an existing endpoint function: contact
