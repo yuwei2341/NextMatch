@@ -179,7 +179,6 @@ def PredictMatch(yourName, tgtName, teamModels, db):
 	featureCoefYour, probYour = PredictOp(teamYourPipe, teamTgtPipe, yourName, teamModels)
 	odds = round(probYour / (probYour + probTgt), 2)
 
-	# Only return features from your model
 	# In featureCoefYour, you want INCREASE those with POSTIVE COEF, DECREASE those with NEGATIVE COEF
 	# In featureCoefTgt, you want to do the opposite
 
