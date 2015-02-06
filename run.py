@@ -23,3 +23,4 @@ app.teamModels = pickle.load(open('./data/teamModels.p', "rb")) # teamModels con
 
 if __name__ == "__main__":
     app.run(debug = True, host = '0.0.0.0', port = 80)
+    #app.run(host = '0.0.0.0', port = 80)
