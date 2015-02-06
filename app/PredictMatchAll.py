@@ -75,6 +75,7 @@ def GetActions(features):
                         featureImprove.append(row['features'])
                         count += 1
 
+    # Whether show 2 columns or 3
     useTwoCol = True
     if useTwoCol:
         actions = pd.DataFrame([featureYAcc + featureYMore, featureOP], index = ['Your', 'OP']).T
@@ -96,6 +97,13 @@ def GetActions(features):
                     actions[ii][jj] = actions[ii][jj][9:] + ' Accuracy'
                 else:
                     actions[ii][jj] = '# of ' + actions[ii][jj]
+                    if ("alls" not in actions[ii][jj]) and ("Penalty Box" not in actions[ii][jj]):
+                        if "Won" in actions[ii][jj]:
+                            actions[ii][jj] = actions[ii][jj][:-4] + 's Won'
+                        elif actions[ii][jj][-2:] != 'ss':
+                            actions[ii][jj] = actions[ii][jj] + 's'
+                        else:
+                            actions[ii][jj] = actions[ii][jj] + 'es'
     #print actions
     return actions, featureImprove           
 
