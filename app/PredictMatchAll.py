@@ -12,7 +12,7 @@ def QueryTeamData(tgtName, yourName, db):
 	"""
 	Get data from MySQL DB
 	"""
-	cur = db.cursor()
+	#cur = db.cursor()
 	teamTgtPipe = pd.io.sql.read_sql(sql = "SELECT * FROM " + tgtName.replace(' ', '_'), con = db)
 	teamYourPipe = pd.io.sql.read_sql(sql = "SELECT * FROM " + yourName.replace(' ', '_'), con = db)
 	return teamTgtPipe, teamYourPipe        
@@ -178,34 +178,34 @@ def ImprovedScore(tgtName, yourName, teamModels, featureImprove, teamTgtPipe, te
 
    
 def PredictMatch(yourName, tgtName, teamModels, db):
-	"""
-	The main function to make prediction, recommend features, and compute improvement
-	"""
+    """
+    The main function to make prediction, recommend features, and compute improvement
+    """
 
-	teamTgtPipe, teamYourPipe = QueryTeamData(tgtName, yourName, db)
-	featureCoefTgt, probTgt = PredictOp(teamTgtPipe, teamYourPipe, tgtName, teamModels)
-	featureCoefYour, probYour = PredictOp(teamYourPipe, teamTgtPipe, yourName, teamModels)
-	odds = round(probYour / (probYour + probTgt), 2)
+    teamTgtPipe, teamYourPipe = QueryTeamData(tgtName, yourName, db)
+    featureCoefTgt, probTgt = PredictOp(teamTgtPipe, teamYourPipe, tgtName, teamModels)
+    featureCoefYour, probYour = PredictOp(teamYourPipe, teamTgtPipe, yourName, teamModels)
+    odds = round(probYour / (probYour + probTgt), 2)
 
-	# In featureCoefYour, you want INCREASE those with POSTIVE COEF, DECREASE those with NEGATIVE COEF
-	# In featureCoefTgt, you want to do the opposite
+    # In featureCoefYour, you want INCREASE those with POSTIVE COEF, DECREASE those with NEGATIVE COEF
+    # In featureCoefTgt, you want to do the opposite
 
-	# reverse both the sign of the coef, and '_op' in features so as to be the same with featureCoefYour
-	featureCoefTgt['coef'] = - featureCoefTgt['coef']
-	featureCoefTgt.features = [ii[:-3] if "_op" in ii else ii + '_op' for ii in featureCoefTgt.features]
-	
-	# Combine only the most important 10 features
-	featureBoth = featureCoefTgt[11:].append(featureCoefYour[11:])
+    # reverse both the sign of the coef, and '_op' in features so as to be the same with featureCoefYour
+    featureCoefTgt['coef'] = - featureCoefTgt['coef']
+    featureCoefTgt.features = [ii[:-3] if "_op" in ii else ii + '_op' for ii in featureCoefTgt.features]
 
-	# get action recommendations
-	# Somehow the pandas here uses a deprecated para cols, instaed of the new one subset
-	#featureBoth.drop_duplicates(subset = 'features', take_last = True, inplace = True)
-	featureBoth.drop_duplicates(cols = 'features', take_last = True, inplace = True)
-	actions, featureImprove = GetActions(featureBoth)
-	Imp = 0.1
-	oddsNew = ImprovedScore(tgtName, yourName, teamModels, featureImprove, teamTgtPipe, teamYourPipe, Imp)
+    # Combine only the most important 10 features
+    featureBoth = featureCoefTgt[11:].append(featureCoefYour[11:])
 
-	return odds, oddsNew, actions
+    # get action recommendations
+    # Somehow the pandas here uses a deprecated para cols, instaed of the new one subset
+    #featureBoth.drop_duplicates(subset = 'features', take_last = True, inplace = True)
+    featureBoth.drop_duplicates(cols = 'features', take_last = True, inplace = True)
+    actions, featureImprove = GetActions(featureBoth)
+    Imp = 0.1
+    oddsNew = ImprovedScore(tgtName, yourName, teamModels, featureImprove, teamTgtPipe, teamYourPipe, Imp)
+
+    return odds, oddsNew, actions
 	
 	
 	
