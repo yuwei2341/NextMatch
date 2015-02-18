@@ -7,3 +7,6 @@ yuwei2341.pem
 yuwei2341_east.pem
 yuwei2341_east.ppk
 out
+error*.txt
+app/.ipynb_checkpoints/
+*ipynb

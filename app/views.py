@@ -39,13 +39,13 @@ def output():
     try:
         # Load config file for database 
         app.config.from_pyfile("../aws.cfg")
-        db = mdb.connect(user = app.config['DB_USER'], host = app.config['DB_HOST'], 
-        passwd = app.config['DB_PASS'], db = app.config['DB_NAME'], charset = 'utf8')
+        db = mdb.connect(user = app.config['DB_USER'], host = app.config['DB_HOST'], passwd = app.config['DB_PASS'], db = app.config['DB_NAME'], charset = 'utf8')
         odds, oddsNew, actions = PredictMatch(yourName, tgtName, teamModels, db)
     except Exception as e:
         print e.message
         text_file = open("error2.txt", "a")
         text_file.write(e.message)
+        text_file.write('yourName: ' + yourName + ' tgtName: ' + rgtName)
         text_file.close()  
     teamRec = {'yourName': yourName, 'tgtName': tgtName, 'odds': odds, 'oddsNew': oddsNew, 'actions': actions}
     return render_template("output.html", title = 'Home', teamRec = teamRec)
