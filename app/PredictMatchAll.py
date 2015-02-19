@@ -56,11 +56,11 @@ def GetActions(features):
     featureImprove = []
     count = 0
     for index, row in features[::-1].iterrows():
-    	if count > 8: # Don't recommend more than 9 actions
+    	if count > 7: # Don't recommend more than 8 actions
     		break
-        if 'poss' not in row['features']:
+        if ('poss' not in row['features'])  and ('scoring' not in row['features']):
             if '_op' in row['features']:
-                if (row['coef'] > 0) and ('accuracy' not in row['features']):
+                if (row['coef'] < 0) and ('accuracy' not in row['features']) and ('accurate' not in row['features']):
                     featureOP.append(row['features'][:-3].replace('_', ' ').title())
                     featureImprove.append(row['features'])
                     count += 1
@@ -195,7 +195,10 @@ def PredictMatch(yourName, tgtName, teamModels, db):
     featureCoefTgt.features = [ii[:-3] if "_op" in ii else ii + '_op' for ii in featureCoefTgt.features]
 
     # Combine only the most important 10 features
-    featureBoth = featureCoefTgt[11:].append(featureCoefYour[11:])
+    # featureBoth = featureCoefTgt[11:].append(featureCoefYour[11:])
+
+    # Combine only all the most important features
+    featureBoth = featureCoefTgt.append(featureCoefYour)
 
     # get action recommendations
     # Somehow the pandas here uses a deprecated para cols, instaed of the new one subset
